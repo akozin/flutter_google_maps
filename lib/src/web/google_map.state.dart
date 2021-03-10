@@ -122,8 +122,8 @@ class GoogleMapState extends GoogleMapStateBase {
     bool waitUntilReady = true,
   }) {
     try {
-      _mapOptions.styles = mapStyle?.parseMapStyle();
-      _map.options = _mapOptions;
+      // _mapOptions.styles = mapStyle?.parseMapStyle();
+      // _map.options = _mapOptions;
     } catch (e) {
       throw utils.MapStyleException(e.toString());
     }
@@ -518,13 +518,12 @@ class GoogleMapState extends GoogleMapStateBase {
       ..mapTypeControl = widget.webPreferences.mapTypeControl
       ..scrollwheel = widget.webPreferences.scrollwheel
       ..panControl = widget.webPreferences.panControl
-      ..overviewMapControl = widget.webPreferences.overviewMapControl
       ..rotateControl = widget.webPreferences.rotateControl
       ..scaleControl = widget.webPreferences.scaleControl
       ..zoomControl = widget.webPreferences.zoomControl
       ..minZoom = widget.minZoom
       ..maxZoom = widget.maxZoom
-      ..styles = widget.mapStyle?.parseMapStyle()
+      // ..styles = widget.mapStyle?.parseMapStyle()
       ..mapTypeId = widget.mapType.toString().split('.')[1]
       ..gestureHandling = widget.interactive ? 'auto' : 'none';
   }
